@@ -1,1 +1,97 @@
-
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DanOutdoor Photography</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 0; padding: 0; background-color: #f4f4f4; color: #333; }
+        header { background-color: #333; color: white; text-align: center; padding: 20px; }
+        .profile { text-align: center; padding: 40px 20px; max-width: 800px; margin: 0 auto; }
+        .profile img { width: 150px; height: 150px; border-radius: 50%; border: 4px solid #ddd; margin-bottom: 20px; }
+        .profile h2 { font-size: 24px; margin-bottom: 10px; }
+        .profile p { font-size: 18px; line-height: 1.6; margin-bottom: 20px; }
+        .contact { margin-bottom: 30px; }
+        .contact a { color: #007bff; text-decoration: none; margin: 0 10px; }
+        .view-albums-btn { background-color: #007bff; color: white; border: none; padding: 15px 30px; font-size: 18px; cursor: pointer; border-radius: 5px; margin: 20px 0; }
+        .view-albums-btn:hover { background-color: #0056b3; }
+        .albums { display: none; padding: 20px; }
+        nav { background-color: #555; text-align: center; padding: 10px; }
+        nav button { background: none; border: none; color: white; padding: 10px; margin: 5px; cursor: pointer; font-size: 16px; }
+        nav button:hover { background-color: #777; }
+        .album { display: none; padding: 20px; text-align: center; }
+        .album.active { display: block; }
+        .gallery { display: flex; flex-wrap: wrap; justify-content: center; }
+        .gallery img { width: 300px; height: auto; margin: 10px; border: 2px solid #ddd; }
+        footer { text-align: center; padding: 10px; background-color: #333; color: white; }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>DanOutdoor Photography</h1>
+    </header>
+    
+    <section class="profile">
+        <img src="profile.jpg" alt="Your Profile Photo">
+        <h2>About Me</h2>
+        <p>I'm a passionate photographer specializing in capturing life's beautiful moments. With experience in hiking, portraits, and street photography, I bring creativity and emotion to every shot. Let's create memories together!</p>
+        <div class="contact">
+            <p><strong>Contact:</strong> your.Jeangalvez9091@gmail.com.com | Phone:09933343686</p>
+            <a href="https://instagram.com/yourhandle">Instagram</a> | <a href="https://www.facebook.com/share/1CCbWkujxB/?mibextid=wwXIfr">Facebook</a>
+        </div>
+        <button class="view-albums-btn" onclick="showAlbums()">View My Albums</button>
+    </section>
+    
+    <div class="albums" id="albums-section">
+        <nav>
+            <button onclick="showAlbum('natures')">Natures</button>
+            <button onclick="showAlbum('portraits')">Portraits</button>
+            <button onclick="showAlbum('streets')">Streets</button>
+        </nav>
+        
+        <section id="natures" class="album active">
+            <h2>Natures</h2>
+            <div class="gallery">
+                <img src="natures1.jpg" alt="Nature Photo 1">
+                <img src="images/natures/photo2.jpg" alt="Nature Photo 2">
+                <!-- Add more -->
+            </div>
+        </section>
+        
+        <section id="portraits" class="album">
+            <h2>Portraits</h2>
+            <div class="gallery">
+                <img src="photo1.jpg" alt="Portrait Photo 1">
+                <img src="photo2.jpg" alt="Portrait Photo 2">
+                <!-- Add more -->
+            </div>
+        </section>
+        
+        <section id="streets" class="album">
+            <h2>Streets</h2>
+            <div class="gallery">
+                <img src="images/streets/photo1.jpg" alt="Street Photo 1">
+                <img src="images/streets/photo2.jpg" alt="Street Photo 2">
+                <!-- Add more -->
+            </div>
+        </section>
+    </div>
+    
+    <footer>
+        <p>&copy; 2023 Your Name Photography. All rights reserved.</p>
+    </footer>
+    
+    <script>
+        function showAlbums() {
+            document.getElementById('albums-section').style.display = 'block';
+            // Scroll to albums
+            document.getElementById('albums-section').scrollIntoView({ behavior: 'smooth' });
+        }
+        function showAlbum(albumId) {
+            const albums = document.querySelectorAll('.album');
+            albums.forEach(album => album.classList.remove('active'));
+            document.getElementById(albumId).classList.add('active');
+        }
+    </script>
+</body>
+</html>
